@@ -16,15 +16,69 @@ alias bsr="source ~/.bashrc"
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+alias rm=trash
+
+alias vim_bashrc='vim ~/.bashrc'
+alias src_bash='source ~/.bashrc'
+
+alias vim_ros_env='vim ~/dotfiles/ros/ros_common.sh'
 
 # Robot connection
-alias raw31='ssh -X mig@raw3-1-pc1'
-alias raw33='ssh -X mig@raw3-3-pc1'
-alias cob33='ssh -X mig@cob3-3-pc1'
-alias cob36='ssh -X mig@cob3-6-pc1'
+alias raw31='ssh -X srd@raw3-1-pc1'
+alias raw33='ssh -X srd@raw3-3-pc1'
+alias cob33='ssh -X srd@cob3-3-pc1'
+alias cob36='ssh -X srd@cob3-6-pc1'
 
 # ROS_MASTER_URI
 alias expraw31='export ROS_MASTER_URI=http://raw3-1-pc1:11311'
 alias expraw33='export ROS_MASTER_URI=http://raw3-3-pc1:11311'
 alias expcob33='export ROS_MASTER_URI=http://cob3-3-pc1:11311'
 alias expcob36='export ROS_MASTER_URI=http://cob3-6-pc1:11311'
+
+# ROS catkin
+alias catkin_make_release='catkin_make -DCMAKE_BUILD_TYPE=Release'
+
+catkin_make_ipa_navigation(){
+ local curr_pa=$(pwd)
+ cd ~/git/nav_ws
+ catkin_make_release
+ cd ${curr_pa}
+}
+
+
+# baer aliases
+#alias baer01='ssh -X robot@25.90.3.103'
+#alias baer02='ssh -X robot@25.90.3.107'
+#alias baer03='ssh -X robot@25.90.3.111'
+#alias baer13='ssh -X robot@25.90.3.151'
+#alias baer18='ssh -X robot@25.90.3.171'
+#alias baer05='ssh -X robot@25.90.3.119'
+#alias baer06='ssh -X robot@25.90.3.123'
+#alias baer07='ssh -X robot@25.90.3.127'
+#alias baer08='ssh -X robot@25.90.3.131'
+#alias baer09='ssh -X robot@25.90.3.135'
+#alias baer11='ssh -X robot@25.90.3.143'
+#alias baer12='ssh -X robot@25.90.3.147'
+#alias baer04='ssh -X robot@25.90.3.115'
+#alias baer15='ssh -X robot@25.90.3.159'
+#alias baer16='ssh -X robot@25.90.3.163'
+#alias baer10='ssh -X robot@25.90.3.139'
+#alias baer14='ssh -X robot@25.90.3.155'
+#alias baer17='ssh -X robot@25.90.3.167'
+
+#alias exp_baer01='export ROS_MASTER_URI=http://25.90.3.103:11311'
+#alias exp_baer02='export ROS_MASTER_URI=http://25.90.3.107:11311'
+#alias exp_baer03='export ROS_MASTER_URI=http://25.90.3.111:11311'
+#alias exp_baer04='export ROS_MASTER_URI=http://25.90.3.115:11311'
+#alias exp_baer06='export ROS_MASTER_URI=http://25.90.3.123:11311'
+#alias exp_baer07='export ROS_MASTER_URI=http://25.90.3.127:11311'
+#alias exp_baer08='export ROS_MASTER_URI=http://25.90.3.131:11311'
+#alias exp_baer09='export ROS_MASTER_URI=http://25.90.3.135:11311'
+#alias exp_baer11='export ROS_MASTER_URI=http://25.90.3.143:11311'
+#alias exp_baer12='export ROS_MASTER_URI=http://25.90.3.147:11311'
+#alias exp_baer13='export ROS_MASTER_URI=http://25.90.3.151:11311'
+#alias exp_baer18='export ROS_MASTER_URI=http://25.90.3.171:11311'
+#alias exp_baer15='export ROS_MASTER_URI=http://25.90.3.159:11311'
+#alias exp_baer16='export ROS_MASTER_URI=http://25.90.3.163:11311'
+#alias exp_baer14='export ROS_MASTER_URI=http://25.90.3.155:11311'
+#alias exp_baer17='export ROS_MASTER_URI=http://25.90.3.167:11311'
