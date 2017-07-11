@@ -29,11 +29,14 @@ alias raw33='ssh -X srd@raw3-3-pc1'
 alias cob33='ssh -X srd@cob3-3-pc1'
 alias cob36='ssh -X srd@cob3-6-pc1'
 
+alias bmwstr='ssh -X bmwstr@192.44.23.156'
+
 # ROS_MASTER_URI
 alias expraw31='export ROS_MASTER_URI=http://raw3-1-pc1:11311'
 alias expraw33='export ROS_MASTER_URI=http://raw3-3-pc1:11311'
 alias expcob33='export ROS_MASTER_URI=http://cob3-3-pc1:11311'
 alias expcob36='export ROS_MASTER_URI=http://cob3-6-pc1:11311'
+alias expbmwstr='export ROS_MASTER_URI=http://192.44.23.156:11311'
 
 # ROS catkin
 alias catkin_make_release='catkin_make -DCMAKE_BUILD_TYPE=Release'
