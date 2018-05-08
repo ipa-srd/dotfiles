@@ -48,6 +48,13 @@ catkin_make_ipa_navigation(){
  cd ${curr_pa}
 }
 
+function single_ros_test {
+        if [ $# -lt 2 ]; then
+                echo "Usage: single_ros_test package testname"
+                return;
+        fi;
+        catkin build "$1" --no-deps --make-args "$2" && rosrun "$1" "$2" "${@:3}"
+}
 
 # baer aliases
 #alias baer01='ssh -X robot@25.90.3.103'
