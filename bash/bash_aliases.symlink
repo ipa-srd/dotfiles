@@ -41,6 +41,9 @@ alias expbmwstr='export ROS_MASTER_URI=http://192.44.23.156:11311'
 # ROS catkin
 alias catkin_make_release='catkin_make -DCMAKE_BUILD_TYPE=Release'
 
+alias diss_ws='cd ~/git/diss_thesis_ws/diss_thesis'
+alias diss_comp='~/git/diss_thesis_ws/diss_thesis/compile.sh'
+
 catkin_make_ipa_navigation(){
  local curr_pa=$(pwd)
  cd ~/git/nav_ws
@@ -55,6 +58,7 @@ function single_ros_test {
         fi;
         catkin build "$1" --no-deps --make-args "$2" && rosrun "$1" "$2" "${@:3}"
 }
+
 
 # baer aliases
 #alias baer01='ssh -X robot@25.90.3.103'
