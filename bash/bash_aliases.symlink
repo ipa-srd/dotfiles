@@ -23,6 +23,9 @@ alias src_bash='source ~/.bashrc'
 
 alias vim_ros_env='vim ~/dotfiles/ros/ros_common.sh'
 
+alias celsius='ssh -X srd@10.17.86.201'
+
+
 # Robot connection
 alias raw31='ssh -X srd@raw3-1-pc1'
 alias raw33='ssh -X srd@raw3-3-pc1'
@@ -96,3 +99,7 @@ function single_ros_test {
 #alias exp_baer16='export ROS_MASTER_URI=http://25.90.3.163:11311'
 #alias exp_baer14='export ROS_MASTER_URI=http://25.90.3.155:11311'
 #alias exp_baer17='export ROS_MASTER_URI=http://25.90.3.167:11311'
+
+# diss stuff
+alias diss_ws='cd ~/workspaces/diss_ws/thesis_ws'
+alias diss_compile='~/workspaces/diss_ws/thesis_ws/diss_thesis/compile.sh'
