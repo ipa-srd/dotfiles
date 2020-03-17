@@ -24,6 +24,7 @@ alias src_bash='source ~/.bashrc'
 alias vim_ros_env='vim ~/dotfiles/ros/ros_common.sh'
 
 alias celsius='ssh -X srd@10.17.86.201'
+alias deeptrack='ssh -X srd-rd@172.21.12.234'
 
 
 # Robot connection
@@ -32,20 +33,46 @@ alias raw33='ssh -X srd@raw3-3-pc1'
 alias cob33='ssh -X srd@cob3-3-pc1'
 alias cob36='ssh -X srd@cob3-6-pc1'
 
-alias bmwstr='ssh -X bmwstr@192.44.23.156'
+# STR
+alias ssh-bmwstr16='ssh -X kinexon@192.168.10.135'
+alias exp-bmwstr16='export ROS_MASTER_URI=http://192.168.10.135:11311'
+alias ssh-bmwstr19='ssh -X kinexon@10.245.204.27'
+alias exp-bmwstr19='export ROS_MASTER_URI=http://10.245.204.27:11311'
+alias ssh-bmwstr21='ssh -X kinexon@10.245.204.28'
+alias exp-bmwstr21='export ROS_MASTER_URI=http://10.245.204.28:11311'
+alias ssh-bmwstr22='ssh -X kinexon@10.245.204.29'
+alias exp-bmwstr22='export ROS_MASTER_URI=http://10.245.204.29:11311'
+alias ssh-bmwstr26='ssh -X kinexon@192.168.10.112'
+alias exp-bmwstr26='export ROS_MASTER_URI=http://192.168.10.112:11311'
+alias ssh-bmwstr27='ssh -X kinexon@10.245.204.35'
+alias exp-bmwstr27='export ROS_MASTER_URI=http://10.245.204.35:11311'
+alias ssh-bmwstr29='ssh -X kinexon@10.245.204.36'
+alias exp-bmwstr29='export ROS_MASTER_URI=http://10.245.204.36:11311'
+alias ssh-bmwstr203='ssh -X kinexon@192.168.1.10'
+alias exp-bmwstr203='export ROS_MASTER_URI=http://192.168.1.10:11311'
+
+#cob4
+alias ssh-cob425='ssh -X mojin@b1.cob4-25'
+alias exp-cob425='export ROS_MASTER_URI=http://10.4.25.11:11311'
+
+
+#cob4
+alias ssh-kaercher1='ssh -X pra-i-01@192.168.1.3'
+alias exp-kaercher1='export ROS_MASTER_URI=http://192.168.1.3:11311'
+
 
 # ROS_MASTER_URI
 alias expraw31='export ROS_MASTER_URI=http://raw3-1-pc1:11311'
 alias expraw33='export ROS_MASTER_URI=http://raw3-3-pc1:11311'
 alias expcob33='export ROS_MASTER_URI=http://cob3-3-pc1:11311'
 alias expcob36='export ROS_MASTER_URI=http://cob3-6-pc1:11311'
-alias expbmwstr='export ROS_MASTER_URI=http://192.44.23.156:11311'
 
 # ROS catkin
 alias catkin_make_release='catkin_make -DCMAKE_BUILD_TYPE=Release'
 
-alias diss_ws='cd ~/git/diss_thesis_ws/diss_thesis'
-alias diss_comp='~/git/diss_thesis_ws/diss_thesis/compile.sh'
+alias diss_ws='cd ~/workspaces/diss_ws/thesis_ws/diss_thesis'
+alias diss_data='cd ~/workspaces/diss_ws/thesis_ws/diss_data'
+alias diss_comp='~/workspaces/diss_ws/thesis_ws/diss_thesis/compile.sh'
 
 catkin_make_ipa_navigation(){
  local curr_pa=$(pwd)
@@ -62,8 +89,11 @@ function single_ros_test {
         catkin build "$1" --no-deps --make-args "$2" && rosrun "$1" "$2" "${@:3}"
 }
 
+alias run_tests='catkin run_tests --no-deps --this'
 
 # baer aliases
+alias ssh-fifi='ssh -X robot@192.168.10.39'
+alias exp-fifi='export ROS_MASTER_URI=http://192.168.10.39:11311'
 #alias baer01='ssh -X robot@25.90.3.103'
 #alias baer02='ssh -X robot@25.90.3.107'
 #alias baer03='ssh -X robot@25.90.3.111'
